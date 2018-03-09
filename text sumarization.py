@@ -42,7 +42,7 @@ CLIP_RATE = 4
 tf.__version__
 stopwords=pd.read_csv('english')
 stopwords[:2]
-reviews=pd.read_csv(\"Reviews.csv\")
+reviews=pd.read_csv("Reviews.csv")
 reviews.shape #returns a 1-D integer tensor representing the shape of input.
 reviews.head(2)
 # Remove null values and unneeded features
@@ -52,7 +52,7 @@ reviews = reviews.reset_index(drop=True)
 reviews.head(2)
 # Inspecting some of the reviews
 for i in range(5):
-print(\"Review #\",i+1)
+print("Review",i+1)
 print(reviews.Summary[i])
 print(reviews.Text[i])
 print()
@@ -60,10 +60,10 @@ def clean_text(text, remove_stopwords = True):
 '''Remove unwanted characters, stopwords, and format the text to create fewer nulls word embeddings'''
 # Convert words to lower case
 text = text.lower()
- # Replace contractions with their longer forms 
+# Replace contractions with their longer forms 
 if True:
- text = text.split()
- new_text = []
+text = text.split()
+new_text = []
 for word in text:
 if word in contractions:
 new_text.append(contractions[word])
@@ -82,40 +82,40 @@ return text
 clean_summaries = []
 for summary in reviews.Summary:
 clean_summaries.append(clean_text(summary, remove_stopwords=False))
-print(\"Summaries are complete.\")
+print("Summaries are complete")
 len(clean_summaries)
 clean_texts = []
 for text in reviews.Text:
-    clean_texts.append(clean_text(text))
-    print(\"Texts are complee.\")
-    len(clean_texts)
-    cs =clean_summaries[:500]
-    ct = clean_texts[:500]
-    max=0
-    for x in range(len(cs)):
-        if (len(cs[x])>=max):
-            max=len(cs[x])
-          max
-    max=0,
-    for x in range(len(ct)):
-        if (len(ct[x])>=max):
-            max=len(ct[x])
-    max
-    ct[299]
-    # Inspect the cleaned summaries and texts to ensure they have been cleaned well
-    for i in range(5):
-       print(\"Clean Review #\",i+1)
-       print(cs[i])
-       print(ct[i])
-       print()
-   def create_vocab(ct,cs):
-    tassert len(ct) == len(cs)
-    tvocab = []\n",
-   tfor i in range(len(ct)):
-    twords = ct[i].split()
-    for word in words:
-    vocab.append(word)
-    twords = cs[i].split()
+clean_texts.append(clean_text(text))
+print("Texts are complee")
+len(clean_texts)
+cs =clean_summaries[:500]
+ct = clean_texts[:500]
+ max=0
+for x in range(len(cs)):
+if (len(cs[x])>=max):
+ max=len(cs[x])
+ max
+max=0,
+for x in range(len(ct)):
+if (len(ct[x])>=max):
+max=len(ct[x])
+max
+ct[299]
+# Inspect the cleaned summaries and texts to ensure they have been cleaned well
+for i in range(5):
+print("Clean Review",i+1)
+print(cs[i])
+print(ct[i])
+print()
+def create_vocab(ct,cs):
+assert len(ct) == len(cs)
+vocab = []\n",
+for i in range(len(ct)):
+              words = ct[i].split()
+for word in words:
+vocab.append(word)
+   words = cs[i].split()
     for word in words:
     vocab.append(word)
     vocab = Counter(vocab)
@@ -440,6 +440,6 @@ else:
  ans_2.append(ans[i])
 str1 = ' '.join(str(e) for e in ans_2)
 return str1
-print(\"summary: \" + str(clean_ans(ans)))   
+print("summary:" + str(clean_ans(ans)))   
  return 1
 sumary()  
