@@ -1,4 +1,1 @@
-# text-summarization-
-text summarization of amazon reviews
-the tensorflow version used is 1.4.1 and sequence to sequence model for training the data.
-things higlited with dark red in code ignore then dont use it
+# text-summarization this is the base code for full and updated latest code with improvements using LSTM and Transformers like T5 refer this repository of mine https://github.com/devanshmody/NLP_FINAL_COMP-5014. 
